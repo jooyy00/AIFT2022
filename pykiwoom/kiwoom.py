@@ -6,7 +6,6 @@ import datetime
 from pykiwoom import parser
 import pandas as pd
 
-
 class Kiwoom:
     def __init__(self,
                  login=False,

@@ -17,7 +17,7 @@ import pandas as pd
 '''
 
 if __name__ == "__main__":
-    kiwoom = Kiwoom()
+    kiwoom = Kiwoom() 
     kiwoom.CommConnect(block=True)
 
     etf = kiwoom.GetCodeListByMarket('8')
@@ -25,3 +25,6 @@ if __name__ == "__main__":
     ret = [(e, kiwoom.GetMasterCodeName(e)) for e in etf]
     pd.DataFrame.from_records(ret, columns=['share_code', 'share_name']).to_csv('etf.csv', index=False)
 
+#로그인 self.ocx.dynamicCall("CommConnect()")
+#마켓의 코드리스트 조회: self.ocx.dynamicCall("GetCodeListByMarket(Qstring)",market)
+#종목명 조회: self.dcx.dynamicCall("GetMasterCodeName(QString)",code)
